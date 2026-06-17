@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lineage Labs LLC — AI Platforms for Contractors, Property Managers & Real Estate Professionals</title>
+<meta name="description" content="Lineage Labs builds practical AI tools for contractors, property managers, and real estate professionals in Southwest Florida. QuoteBuilder, SWFL Entity Risk Intelligence, SWFL Market Intelligence, and PropTrack." />
+<meta property="og:title" content="Lineage Labs LLC — AI-Powered Platforms" />
+<meta property="og:description" content="Practical AI tools built in Southwest Florida for contractors, property managers, and real estate professionals." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #38b2c0;
+    --blue-light: #e6f8fa;
+    --blue-dark: #2a8a96;
+    --teal: #2a8a96;
+    --teal-light: #e6f8fa;
+    --amber: #a8873a;
+    --amber-light: #fdf4e0;
+    --purple: #534AB7;
+    --purple-light: #EEEDFE;
+    --charcoal: #2d3748;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-600: #6b7280;
+    --gray-800: #374151;
+    --black: #0a0a0a;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 14px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 48px;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-mark {
+    width: 34px; height: 34px;
+    background: var(--blue);
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .nav-logo-mark svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 1.8; }
+  .nav-logo-name { font-size: 15px; font-weight: 600; color: var(--black); }
+  .nav-logo-tag { font-size: 11px; color: var(--gray-600); margin-top: 0; }
+
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { font-size: 13px; color: var(--gray-800); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--blue); }
+
+  .btn-primary {
+    background: var(--charcoal); color: #fff; border: none;
+    border-radius: var(--radius-md); padding: 9px 20px;
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    font-family: inherit; transition: background 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: #1a202c; }
+
+  .btn-secondary {
+    background: #fff; color: var(--gray-800);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md); padding: 9px 20px;
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    font-family: inherit; transition: background 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { background: var(--gray-50); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 88px 48px 80px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--blue-light); color: var(--blue-dark);
+    border-radius: 999px; padding: 5px 14px;
+    font-size: 12px; font-weight: 500; margin-bottom: 24px;
+  }
+  .pill svg { width: 12px; height: 12px; stroke: var(--blue-dark); fill: none; stroke-width: 2; }
+
+  .hero h1 {
+    font-size: 42px; font-weight: 600; line-height: 1.18;
+    max-width: 640px; margin: 0 auto 18px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero-sub {
+    font-size: 16px; color: var(--gray-600);
+    max-width: 500px; margin: 0 auto 36px; line-height: 1.65;
+  }
+
+  .hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .hero-btns .btn-primary { padding: 12px 28px; font-size: 14px; }
+  .hero-btns .btn-secondary { padding: 12px 28px; font-size: 14px; }
+  .hero-note { font-size: 12px; color: var(--gray-400); margin-top: 16px; }
+
+  /* ── STATS ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .stat {
+    padding: 28px 20px; text-align: center;
+    border-right: 1px solid var(--gray-200);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 24px; font-weight: 600; color: var(--charcoal); margin-bottom: 3px; }
+  .stat-label { font-size: 12px; color: var(--gray-600); }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 48px; border-bottom: 1px solid var(--gray-200); }
+  section.bg { background: var(--gray-50); }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; color: var(--blue);
+    letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 8px;
+  }
+  .section-title { font-size: 26px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.2px; }
+  .section-sub { font-size: 15px; color: var(--gray-600); margin-bottom: 48px; max-width: 500px; }
+  .section-center { text-align: center; }
+  .section-center .section-sub { margin-left: auto; margin-right: auto; }
+
+  /* ── PRODUCT GRID ── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .product-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.15s;
+  }
+  .product-card:hover { border-color: #b5d4f4; }
+  .product-card.featured { border: 2px solid var(--blue); }
+
+  .card-head {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; margin-bottom: 16px;
+  }
+
+  .card-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-icon svg { width: 20px; height: 20px; stroke-width: 1.7; fill: none; }
+  .icon-blue { background: var(--blue-light); }
+  .icon-blue svg { stroke: var(--blue); }
+  .icon-teal { background: var(--teal-light); }
+  .icon-teal svg { stroke: var(--teal); }
+  .icon-amber { background: var(--amber-light); }
+  .icon-amber svg { stroke: var(--amber); }
+  .icon-purple { background: var(--purple-light); }
+  .icon-purple svg { stroke: var(--purple); }
+
+  .badge {
+    font-size: 11px; font-weight: 500;
+    padding: 3px 10px; border-radius: 999px;
+  }
+  .badge-live { background: var(--teal-light); color: var(--teal); }
+  .badge-access { background: var(--blue-light); color: var(--blue-dark); }
+  .badge-soon { background: var(--gray-100); color: var(--gray-600); }
+
+  .card-name { font-size: 17px; font-weight: 600; margin-bottom: 3px; }
+  .card-tagline { font-size: 12px; color: var(--blue); font-weight: 500; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; margin-bottom: 16px; }
+
+  .card-features {
+    list-style: none; display: flex; flex-direction: column;
+    gap: 6px; margin-bottom: 20px;
+  }
+  .card-features li {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 12px; color: var(--gray-800);
+  }
+  .card-features li svg {
+    width: 13px; height: 13px; stroke: var(--blue);
+    stroke-width: 2.5; fill: none; flex-shrink: 0;
+  }
+
+  .card-footer {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    margin-top: auto; padding-top: 18px;
+    border-top: 1px solid var(--gray-100);
+  }
+  .card-price { font-size: 17px; font-weight: 600; }
+  .card-price span { font-size: 12px; font-weight: 400; color: var(--gray-600); }
+  .card-price.muted { font-size: 12px; font-weight: 400; color: var(--gray-600); }
+
+  .card-cta {
+    background: var(--charcoal); color: #fff; border: none;
+    border-radius: var(--radius-sm); padding: 8px 18px;
+    font-size: 12px; font-weight: 500; cursor: pointer;
+    font-family: inherit; transition: background 0.15s;
+    text-decoration: none;
+  }
+  .card-cta:hover { background: #1a202c; }
+  .card-cta.ghost {
+    background: #fff; color: var(--gray-800);
+    border: 1px solid var(--gray-200);
+  }
+  .card-cta.ghost:hover { background: var(--gray-50); }
+
+  /* ── AUDIENCE ── */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px; margin-top: 40px;
+  }
+  .audience-card {
+    background: #fff; border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg); padding: 22px;
+  }
+  .audience-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+  }
+  .audience-icon svg { width: 16px; height: 16px; stroke-width: 1.8; fill: none; }
+  .audience-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .audience-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
+  .audience-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+  .tag {
+    font-size: 11px; padding: 2px 9px; border-radius: 999px; font-weight: 500;
+  }
+  .tag-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .tag-teal { background: var(--teal-light); color: var(--teal); }
+  .tag-amber { background: var(--amber-light); color: var(--amber); }
+  .tag-purple { background: var(--purple-light); color: var(--purple); }
+
+  /* ── HOW IT WORKS ── */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px; margin-top: 44px;
+  }
+  .how-step { text-align: center; padding: 0 8px; }
+  .how-num {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--charcoal); color: #fff;
+    font-size: 12px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .how-title { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+  .how-desc { font-size: 12px; color: var(--gray-600); line-height: 1.55; }
+
+  /* ── TRUST ── */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px; margin-top: 36px;
+  }
+  .trust-card {
+    background: #fff; border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg); padding: 20px;
+  }
+  .trust-icon { margin-bottom: 10px; }
+  .trust-icon svg { width: 22px; height: 22px; stroke: var(--blue); stroke-width: 1.7; fill: none; }
+  .trust-title { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+  .trust-desc { font-size: 12px; color: var(--gray-600); line-height: 1.55; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    padding: 80px 48px; text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .cta-band h2 { font-size: 28px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.2px; }
+  .cta-band p { font-size: 15px; color: var(--gray-600); margin-bottom: 30px; }
+  .cta-band .btn-primary { font-size: 15px; padding: 14px 40px; }
+  .cta-note { font-size: 12px; color: var(--gray-400); margin-top: 14px; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 26px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-left { font-size: 12px; color: var(--gray-400); }
+  .footer-right { display: flex; gap: 20px; }
+  .footer-right a { font-size: 12px; color: var(--gray-400); text-decoration: none; }
+  .footer-right a:hover { color: var(--gray-600); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 20px 48px; }
+    .hero h1 { font-size: 28px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    section { padding: 48px 20px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .cta-band { padding: 56px 20px; }
+    footer { padding: 20px; flex-direction: column; gap: 12px; text-align: center; }
+    .footer-right { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="logo.jpg" alt="Lineage Labs LLC" style="height:40px;width:auto;border-radius:4px;" />
+  </a>
+  <div class="nav-links">
+    <a href="#products">Products</a>
+    <a href="#who-we-serve">Who we serve</a>
+    <a href="#pricing">Pricing</a>
+    <a href="mailto:Lineagelabsllc@gmail.com">Contact</a>
+  </div>
+  <a class="btn-primary" href="mailto:Lineagelabsllc@gmail.com">Get started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="pill">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+    Built in Southwest Florida, for the real world
+  </div>
+  <h1>AI platforms that do the <em>heavy lifting</em> for your business</h1>
+  <p class="hero-sub">Lineage Labs builds practical AI tools for contractors, property managers, and real estate professionals — software that saves hours and pays for itself.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="#products">Explore our products &rarr;</a>
+    <a class="btn-secondary" href="mailto:Lineagelabsllc@gmail.com">Contact us</a>
+  </div>
+  <p class="hero-note">No setup fees &middot; accounts reviewed manually &middot; cancel anytime</p>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">AI platforms</div></div>
+  <div class="stat"><div class="stat-num">SWFL</div><div class="stat-label">locally built &amp; operated</div></div>
+  <div class="stat"><div class="stat-num">&lt;5 min</div><div class="stat-label">avg time saved per task</div></div>
+  <div class="stat"><div class="stat-num">$0</div><div class="stat-label">setup fee on any product</div></div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-label">Our products</div>
+  <div class="section-title">Four platforms. One company.</div>
+  <p class="section-sub">Each tool solves a real problem for a specific audience — purpose-built, not generic.</p>
+
+  <div class="product-grid">
+
+    <!-- QuoteBuilder -->
+    <div class="product-card featured">
+      <div class="card-head">
+        <div class="card-icon icon-blue">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <span class="badge badge-live">Live</span>
+      </div>
+      <div class="card-name">QuoteBuilder</div>
+      <div class="card-tagline">Voice-to-quote for contractors</div>
+      <p class="card-desc">Describe a job out loud and get a branded PDF quote ready to email in minutes. Built for handymen and small crews who don't have time for spreadsheets.</p>
+      <ul class="card-features">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>AI voice transcription → line items</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Branded PDF quotes &amp; email delivery</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Automated client follow-ups</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Team accounts with shared quote access</li>
+      </ul>
+      <div class="card-footer" id="pricing">
+        <div class="card-price">$50<span>/mo &middot; +$10/user</span></div>
+        <a class="card-cta" href="mailto:Lineagelabsllc@gmail.com?subject=QuoteBuilder access request">Request access</a>
+      </div>
+    </div>
+
+    <!-- SWFL ERI -->
+    <div class="product-card">
+      <div class="card-head">
+        <div class="card-icon icon-teal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L4 7v5c0 5 4 9 8 10 4-1 8-5 8-10V7L12 3z"/></svg>
+        </div>
+        <span class="badge badge-access">Request access</span>
+      </div>
+      <div class="card-name">SWFL Entity Risk Intelligence</div>
+      <div class="card-tagline">Contractor due diligence reports</div>
+      <p class="card-desc">Before you hire a contractor, know exactly who you're dealing with. Instant reports pulling Sunbiz registration, DBPR licenses, court records, UCC liens, permits, and Google reviews.</p>
+      <ul class="card-features">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Florida Sunbiz &amp; DBPR license verification</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Federal &amp; state litigation history</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>UCC lien &amp; building permit records</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Green / Yellow / Red risk rating</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-price muted">Pricing on request</div>
+        <a class="card-cta" href="mailto:Lineagelabsllc@gmail.com?subject=SWFL Entity Risk Intelligence inquiry">Learn more</a>
+      </div>
+    </div>
+
+    <!-- SWFL Market Intelligence -->
+    <div class="product-card">
+      <div class="card-head">
+        <div class="card-icon icon-amber">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <span class="badge badge-access">Request access</span>
+      </div>
+      <div class="card-name">SWFL Market Intelligence</div>
+      <div class="card-tagline">Instant buyer &amp; seller reports</div>
+      <p class="card-desc">Enter a property address and generate a polished PDF report with market analysis, community profile, and listing talking points — ready to hand to a client in seconds.</p>
+      <ul class="card-features">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Seller &amp; buyer report modes</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Collier, Lee &amp; Charlotte counties</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Market comps &amp; valuation data</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Agent-branded PDF output</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-price muted">Pricing on request</div>
+        <a class="card-cta" href="mailto:Lineagelabsllc@gmail.com?subject=SWFL Market Intelligence inquiry">Learn more</a>
+      </div>
+    </div>
+
+    <!-- PropTrack -->
+    <div class="product-card">
+      <div class="card-head">
+        <div class="card-icon icon-purple">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+        </div>
+        <span class="badge badge-soon">Coming soon</span>
+      </div>
+      <div class="card-name">PropTrack</div>
+      <div class="card-tagline">Property management dashboard</div>
+      <p class="card-desc">Track income, expenses, tenants, vendors, and invoices across your entire rental portfolio — with charts and per-property breakdowns that make tax season painless.</p>
+      <ul class="card-features">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Multi-property income vs. expense tracking</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Tenant &amp; vendor management</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Invoice history &amp; categorized spend</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Admin view across linked accounts</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-price muted">Notify me when live</div>
+        <a class="card-cta ghost" href="mailto:Lineagelabsllc@gmail.com?subject=PropTrack waitlist">Join waitlist</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="bg" id="who-we-serve">
+  <div class="section-label">Who we serve</div>
+  <div class="section-title">Built for people who run things</div>
+  <p class="section-sub">Our tools are designed for operators, not enterprise IT departments.</p>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <div class="audience-icon icon-blue">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="audience-title">Contractors &amp; handymen</div>
+      <p class="audience-desc">Solo operators and small crews who need to quote faster, look more professional, and follow up without the admin headache.</p>
+      <div class="audience-tags"><span class="tag tag-blue">QuoteBuilder</span></div>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon icon-amber">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      </div>
+      <div class="audience-title">Property owners &amp; managers</div>
+      <p class="audience-desc">Landlords who hire contractors, need to vet them quickly, and want their portfolio finances organized in one place.</p>
+      <div class="audience-tags">
+        <span class="tag tag-teal">SWFL Entity Risk Intelligence</span>
+        <span class="tag tag-purple">PropTrack</span>
+      </div>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon icon-teal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
+      </div>
+      <div class="audience-title">Real estate professionals</div>
+      <p class="audience-desc">Agents and brokers in Collier, Lee, and Charlotte who need instant market reports to impress buyers and sellers at the listing appointment.</p>
+      <div class="audience-tags"><span class="tag tag-amber">SWFL Market Intelligence</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-center">
+    <div class="section-label">How it works</div>
+    <div class="section-title">From signup to results in one day</div>
+  </div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <div class="how-title">Pick your product</div>
+      <p class="how-desc">Choose the platform that fits your role. Each tool is focused on one job and does it extremely well.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <div class="how-title">Request access</div>
+      <p class="how-desc">We review every account manually. Expect approval within 24 hours — we keep the platform high quality.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <div class="how-title">Set up in minutes</div>
+      <p class="how-desc">No long onboarding. Add your details, run your first report or quote, and you're live.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">4</div>
+      <div class="how-title">Save time every day</div>
+      <p class="how-desc">Our tools handle the tedious work so you can focus on the jobs, clients, and decisions that matter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY LINEAGE LABS -->
+<section class="bg">
+  <div class="section-center">
+    <div class="section-label">Why Lineage Labs</div>
+    <div class="section-title">Built differently</div>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div class="trust-title">Southwest Florida focused</div>
+      <p class="trust-desc">Our data sources, county integrations, and market knowledge are built specifically for Collier, Lee, and Charlotte counties.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <div class="trust-title">Manual account approval</div>
+      <p class="trust-desc">Every account is reviewed before activation. We'd rather have 50 serious users than 5,000 who don't get value from the platform.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+      </div>
+      <div class="trust-title">Flat pricing, no surprises</div>
+      <p class="trust-desc">No percentage cuts, no usage tiers, no enterprise contracts. You know exactly what you're paying before you sign up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Ready to work smarter?</h2>
+  <p>Pick a product and request access — we'll have you up and running within 24 hours.</p>
+  <a class="btn-primary" href="mailto:Lineagelabsllc@gmail.com">Get started with Lineage Labs &rarr;</a>
+  <p class="cta-note">No setup fees &middot; manual approval &middot; cancel anytime</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">&copy; 2026 Lineage Labs LLC &middot; Southwest Florida</div>
+  <div class="footer-right">
+    <a href="#products">Products</a>
+    <a href="mailto:Lineagelabsllc@gmail.com">Contact</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+</footer>
+
+</body>
+</html>
