@@ -242,6 +242,12 @@
   }
   .card-cta.ghost:hover { background: var(--gray-50); }
 
+  .card-link-secondary {
+    font-size: 12px; font-weight: 500; color: var(--gray-600);
+    text-decoration: none;
+  }
+  .card-link-secondary:hover { color: var(--gray-800); text-decoration: underline; }
+
   /* ── AUDIENCE ── */
   .audience-grid {
     display: grid;
@@ -455,7 +461,10 @@
       </ul>
       <div class="card-footer">
         <div class="card-price">From $5<span>/report</span></div>
-        <a class="card-cta" href="https://swfl-market-intelligence.vercel.app/purchase">Sign Up Here</a>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <a class="card-link-secondary" href="https://swfl-market-intelligence.vercel.app/login">Sign in</a>
+          <a class="card-cta" href="https://swfl-market-intelligence.vercel.app/purchase">Sign Up Here</a>
+        </div>
       </div>
     </div>
 
